@@ -1,0 +1,78 @@
+<!-- TESTIMONIOS -->
+<section id="testimonios" style="padding:7rem 5rem;background:var(--white);">
+<style>
+  .testi-tag { font-size:.68rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent-dark); font-weight:500; margin-bottom:1rem; display:flex; align-items:center; gap:.5rem; }
+  .testi-tag::before { content:''; display:block; width:20px; height:1px; background:var(--accent-dark); }
+  .testi-header { margin-bottom:3.5rem; }
+  .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
+  .testi-card {
+    background:var(--cream);
+    border:1px solid var(--sand);
+    border-radius:3px;
+    padding:2.2rem 2rem 2rem;
+    position:relative;
+    transition:box-shadow .3s, transform .3s;
+  }
+  .testi-card:hover { transform:translateY(-4px); box-shadow:0 20px 50px rgba(26,24,21,.08); }
+  .testi-quote-icon { font-family:'Cormorant Garamond',serif; font-size:4rem; font-weight:300; color:var(--accent); line-height:1; margin-bottom:1rem; opacity:.5; }
+  .testi-text {
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    font-size:1.15rem;
+    font-weight:300;
+    line-height:1.7;
+    color:var(--charcoal);
+    margin-bottom:1.8rem;
+  }
+  .testi-author { display:flex; align-items:center; gap:1rem; border-top:1px solid var(--sand); padding-top:1.4rem; }
+  .testi-avatar { width:44px; height:44px; border-radius:50%; object-fit:cover; background:var(--sand); flex-shrink:0; }
+  .testi-name { font-size:.82rem; font-weight:500; color:var(--dark); }
+  .testi-role { font-size:.72rem; color:var(--warm-mid); margin-top:.1rem; }
+  .testi-stars { color:var(--accent); font-size:.85rem; letter-spacing:.1em; margin-bottom:.8rem; }
+</style>
+  <div class="testi-tag">Testimonios</div>
+  <div class="testi-header">
+    <h2 class="section-title">Lo que dicen<br>nuestros <span>clientes</span></h2>
+  </div>
+  <div class="testi-grid">
+    <!-- Testimonio 1 -->
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote-icon">"</div>
+      <p class="testi-text">Vendí en menos de 3 semanas y al precio exacto que C | Propiedades proyectó. El slider de antes y después fue lo que convenció al comprador.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88"><circle cx="44" cy="44" r="44" fill="#C8A87A"/><text x="44" y="49" text-anchor="middle" font-family="serif" font-size="22" fill="#1A1815" font-weight="400">MT</text></svg>" alt="María Teresa">
+        <div>
+          <div class="testi-name">María Teresa V.</div>
+          <div class="testi-role">Vendedora · Providencia</div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonio 2 -->
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote-icon">"</div>
+      <p class="testi-text">Encontré mi departamento con potencial real de inversión. La proyección post-remodelación se cumplió. Trabajar con C | Propiedades fue la mejor decisión.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88"><circle cx="44" cy="44" r="44" fill="#3D5A47"/><text x="44" y="49" text-anchor="middle" font-family="serif" font-size="22" fill="#FEFCF9" font-weight="400">JR</text></svg>" alt="Jorge Ramírez">
+        <div>
+          <div class="testi-name">Jorge R.</div>
+          <div class="testi-role">Comprador · Vitacura</div>
+        </div>
+      </div>
+    </div>
+    <!-- Testimonio 3 -->
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <div class="testi-quote-icon">"</div>
+      <p class="testi-text">Tenía una casa con años de historia y no sabía cómo venderla. C | Propiedades la transformó visualmente y la presentó como lo que siempre pudo ser.</p>
+      <div class="testi-author">
+        <img class="testi-avatar" src="data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88"><circle cx="44" cy="44" r="44" fill="#6B6259"/><text x="44" y="49" text-anchor="middle" font-family="serif" font-size="22" fill="#FEFCF9" font-weight="400">SM</text></svg>" alt="Sofía Muñoz">
+        <div>
+          <div class="testi-name">Sofía M.</div>
+          <div class="testi-role">Vendedora · Las Condes</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
