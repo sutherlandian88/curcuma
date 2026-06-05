@@ -182,9 +182,220 @@
 </script> -->
 
 <!-- Preconnect Google Fonts (performance) -->
+<!-- ══ PERFORMANCE — preconnect + preload crítico ══ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://formspree.io">
+
+<!-- Preload hero images (LCP) -->
+<link rel="preload" as="image" href="imgs/sz-01A-cocina-antes.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="imgs/sz-01B-cocina-despues.jpg" fetchpriority="high">
+
+<!-- Fuentes: preload + swap asegurado -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"></noscript>
+
+<!-- ══ SCHEMA: Organization con logo ══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Cúrcuma | Propiedades",
+  "url": "https://sutherlandian88.github.io/curcuma/",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://sutherlandian88.github.io/curcuma/logo-curcuma.png",
+    "width": 560,
+    "height": 130
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+56-9-9818-2936",
+    "contactType": "sales",
+    "areaServed": "CL",
+    "availableLanguage": "Spanish"
+  },
+  "sameAs": ["https://instagram.com/curcuma.propiedades"]
+}
+</script>
+
+<!-- ══ SCHEMA: ItemList — todas las propiedades ══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Propiedades con potencial en Santiago",
+  "description": "Propiedades subvaloradas con visualización antes y después de remodelación en las mejores comunas de Santiago",
+  "numberOfItems": 10,
+  "itemListElement": [
+    {
+      "@type": "ListItem", "position": 1,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Casa sector Los Trapenses — Lo Barnechea",
+        "description": "Casa con potencial de remodelación en sector Los Trapenses, Lo Barnechea. Visualización antes y después incluida.",
+        "numberOfRooms": 2,
+        "floorSize": {"@type": "QuantitativeValue", "unitCode": "MTK"},
+        "address": {"@type": "PostalAddress", "addressLocality": "Lo Barnechea", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "52000", "priceCurrency": "UF", "availability": "https://schema.org/InStock"},
+        "image": "https://sutherlandian88.github.io/curcuma/imgs/sz-05B-living-despues.jpg"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 2,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Casa sector El Tranque — Lo Barnechea",
+        "description": "Casa 5 dormitorios con gran potencial en El Tranque, Lo Barnechea.",
+        "numberOfRooms": 5,
+        "address": {"@type": "PostalAddress", "addressLocality": "Lo Barnechea", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "30000", "priceCurrency": "UF", "availability": "https://schema.org/InStock"},
+        "image": "https://sutherlandian88.github.io/curcuma/imgs/rb-01B-hall-despues.jpg"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 3,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Casa sector Santuario del Valle — Lo Barnechea",
+        "description": "Casa 6 dormitorios en Santuario del Valle con remodelación proyectada.",
+        "numberOfRooms": 6,
+        "address": {"@type": "PostalAddress", "addressLocality": "Lo Barnechea", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "31489", "priceCurrency": "UF", "availability": "https://schema.org/InStock"},
+        "image": "https://sutherlandian88.github.io/curcuma/imgs/qt-01B-fachada-despues.jpg"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 4,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Casa en Camino El Alba — Las Condes",
+        "description": "Casa 4 dormitorios en Camino El Alba, Las Condes. Potencial de remodelación alto.",
+        "numberOfRooms": 4,
+        "address": {"@type": "PostalAddress", "addressLocality": "Las Condes", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "18500", "priceCurrency": "UF", "availability": "https://schema.org/InStock"},
+        "image": "https://sutherlandian88.github.io/curcuma/imgs/sz-11B-dorm1-despues.jpg"
+      }
+    },
+    {
+      "@type": "ListItem", "position": 5,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Departamento en El Golf — Las Condes",
+        "description": "Departamento 3 dormitorios en El Golf, Las Condes. Ubicación premium con potencial.",
+        "numberOfRooms": 3,
+        "address": {"@type": "PostalAddress", "addressLocality": "Las Condes", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "9200", "priceCurrency": "UF", "availability": "https://schema.org/InStock"}
+      }
+    },
+    {
+      "@type": "ListItem", "position": 6,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Casa Pedro de Valdivia — Providencia",
+        "description": "Casa 4 dormitorios en Pedro de Valdivia, Providencia. Zona consolidada con alto potencial.",
+        "numberOfRooms": 4,
+        "address": {"@type": "PostalAddress", "addressLocality": "Providencia", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "14800", "priceCurrency": "UF", "availability": "https://schema.org/InStock"}
+      }
+    },
+    {
+      "@type": "ListItem", "position": 7,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Casa en El Arrayán — Lo Barnechea",
+        "description": "Casa 4 dormitorios en El Arrayán, Lo Barnechea. Entorno natural único.",
+        "numberOfRooms": 4,
+        "address": {"@type": "PostalAddress", "addressLocality": "Lo Barnechea", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "12900", "priceCurrency": "UF", "availability": "https://schema.org/InStock"}
+      }
+    },
+    {
+      "@type": "ListItem", "position": 8,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Departamento Av. Bicentenario — Vitacura",
+        "description": "Departamento 3 dormitorios en Av. Bicentenario, Vitacura.",
+        "numberOfRooms": 3,
+        "address": {"@type": "PostalAddress", "addressLocality": "Vitacura", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "11400", "priceCurrency": "UF", "availability": "https://schema.org/InStock"}
+      }
+    },
+    {
+      "@type": "ListItem", "position": 9,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Casa en La Dehesa — Las Condes",
+        "description": "Casa 4 dormitorios en La Dehesa, Las Condes. Amplia y con potencial de remodelación.",
+        "numberOfRooms": 4,
+        "address": {"@type": "PostalAddress", "addressLocality": "Las Condes", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "16200", "priceCurrency": "UF", "availability": "https://schema.org/InStock"}
+      }
+    },
+    {
+      "@type": "ListItem", "position": 10,
+      "item": {
+        "@type": "RealEstateListing",
+        "name": "Departamento Av. Condell — Providencia",
+        "description": "Departamento 2 dormitorios en Av. Condell, Providencia. Ideal para remodelar.",
+        "numberOfRooms": 2,
+        "address": {"@type": "PostalAddress", "addressLocality": "Providencia", "addressRegion": "Región Metropolitana", "addressCountry": "CL"},
+        "offers": {"@type": "Offer", "price": "8600", "priceCurrency": "UF", "availability": "https://schema.org/InStock"}
+      }
+    }
+  ]
+}
+</script>
+
+<!-- ══ SCHEMA: Speakable — contenido clave para voice search ══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Cúrcuma | Propiedades con Potencial en Santiago",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": [".hero-title", ".hero-sub", ".section-title", ".notify-title"]
+  },
+  "mainContentOfPage": {
+    "@type": "WebPageElement",
+    "cssSelector": "#main"
+  },
+  "breadcrumb": {
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://sutherlandian88.github.io/curcuma/"},
+      {"@type": "ListItem", "position": 2, "name": "Propiedades", "item": "https://sutherlandian88.github.io/curcuma/#propiedades"},
+      {"@type": "ListItem", "position": 3, "name": "Cómo funciona", "item": "https://sutherlandian88.github.io/curcuma/#proceso"},
+      {"@type": "ListItem", "position": 4, "name": "Contacto", "item": "https://sutherlandian88.github.io/curcuma/#contacto"}
+    ]
+  }
+}
+</script>
+
+<!-- ══ SCHEMA: VideoObject — video staging ══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Casa Los Sauzales — Recorrido virtual antes y después de remodelación",
+  "description": "Tour virtual de la propiedad en sector Los Sauzales, Lo Barnechea. Muestra el estado actual y el potencial de remodelación proyectado por Cúrcuma Propiedades.",
+  "thumbnailUrl": "https://sutherlandian88.github.io/curcuma/imgs/sz-01B-cocina-despues.jpg",
+  "contentUrl": "https://sutherlandian88.github.io/curcuma/imgs/sz-video.mp4",
+  "uploadDate": "2026-06-04",
+  "duration": "PT1M",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cúrcuma | Propiedades",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sutherlandian88.github.io/curcuma/logo-curcuma.png"
+    }
+  }
+}
+</script>
 <style>
   :root {
     --cream: #F5F0E8;
@@ -2260,11 +2471,11 @@
     <div class="before-after-container" id="heroBA">
       <!-- BEFORE -->
       <div class="img-before">
-        <img src="imgs/sz-01A-cocina-antes.jpg" loading="eager" alt="Los Sauzales — Cocina antes de remodelar" draggable="false">
+        <img src="imgs/sz-01A-cocina-antes.jpg" loading="eager" decoding="async" fetchpriority="high" alt="Casa Los Sauzales Lo Barnechea — Cocina antes de remodelar" draggable="false">
       </div>
       <!-- AFTER -->
       <div class="img-after ba-after" id="baAfter">
-        <img src="imgs/sz-01B-cocina-despues.jpg" loading="eager" alt="Los Sauzales — Cocina después de remodelar" draggable="false">
+        <img src="imgs/sz-01B-cocina-despues.jpg" loading="eager" decoding="async" fetchpriority="high" alt="Casa Los Sauzales Lo Barnechea — Cocina después de remodelar, visualización Cúrcuma Propiedades" draggable="false">
       </div>
       <!-- Divider -->
       <div class="ba-divider" id="baDivider"></div>
@@ -2724,10 +2935,10 @@
       <div class="card-image-wrap">
         <div class="card-ba-wrap" id="cbar">
           <div class="card-ba-before">
-            <img src="imgs/rb-01A-hall-antes.jpg" alt="El Rebalse — Hall antes" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="imgs/rb-01A-hall-antes.jpg" alt="El Rebalse — Hall antes de remodelar, Lo Barnechea" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div class="card-ba-after" id="cbar-after">
-            <img src="imgs/rb-01B-hall-despues.jpg" alt="El Rebalse — Hall después" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="imgs/rb-01B-hall-despues.jpg" alt="El Rebalse — Hall después de remodelar, Lo Barnechea" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div class="card-ba-divider" id="cbar-div"></div>
           <div class="card-ba-handle" id="cbar-handle" aria-label="Deslizar para comparar">
@@ -2775,10 +2986,10 @@
       <div class="card-image-wrap">
         <div class="card-ba-wrap" id="cbaq">
           <div class="card-ba-before">
-            <img src="imgs/qt-01A-fachada-antes.jpg" alt="El Queltehue — Fachada antes" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="imgs/qt-01A-fachada-antes.jpg" alt="Propiedad sector Santuario del Valle — Fachada antes de remodelar" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div class="card-ba-after" id="cbaq-after">
-            <img src="imgs/qt-01B-fachada-despues.jpg" alt="El Queltehue — Fachada después" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;">
+            <img src="imgs/qt-01B-fachada-despues.jpg" alt="Propiedad sector Santuario del Valle — Fachada después de remodelar" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
           </div>
           <div class="card-ba-divider" id="cbaq-div"></div>
           <div class="card-ba-handle" id="cbaq-handle" aria-label="Deslizar para comparar">
@@ -3163,7 +3374,7 @@
     <!-- Asturias — Arriendo -->
     <div class="listing-card featured" data-prop="asturias" data-tipo="departamento" data-dorm="2" data-uf="0" data-commune="Las Condes">
       <div class="card-image-wrap">
-        <img src="imgs/as-01-living-staged.jpg" alt="Asturias / Renato Sánchez — Living" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;">
+        <img src="imgs/as-01-living-staged.jpg" alt="Departamento Asturias Renato Sánchez Las Condes — Living remodelado" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
         <span class="card-badge badge-oportunidad" style="z-index:8">Arriendo</span>
       </div>
       <div class="card-body">
