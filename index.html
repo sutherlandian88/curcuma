@@ -6575,22 +6575,53 @@ window.addEventListener('popstate', () => {
 
 <!-- ── Favoritos ── -->
 <div id="fav-overlay" class="fav-overlay" onclick="closeFavPanel()"></div>
-<aside id="fav-panel" class="fav-panel" aria-label="Mis favoritos">
-  <div class="fav-panel-header">
-    <div>
-      <h2 class="fav-panel-title">Mis favoritos</h2>
-      <p id="fav-panel-count" class="fav-panel-count">0 propiedades</p>
+<div id="fav-modal" class="fav-modal" role="dialog" aria-modal="true" aria-label="Mis favoritos">
+  <div class="fav-modal-inner">
+
+    <!-- Header -->
+    <div class="fav-modal-header">
+      <div>
+        <h2 class="fav-panel-title">Mis favoritos</h2>
+        <p id="fav-panel-count" class="fav-panel-count">0 propiedades</p>
+      </div>
+      <div class="fav-header-actions">
+        <button id="favCompareBtn" class="fav-action-btn" onclick="showCompareView()" style="display:none" title="Comparar propiedades seleccionadas">
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+          Comparar
+        </button>
+        <button id="favWspBtn" class="fav-action-btn fav-action-wsp" onclick="favShareWsp()" style="display:none" title="Consultar por WhatsApp">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          WhatsApp
+        </button>
+        <button class="fav-panel-close" onclick="closeFavPanel()" aria-label="Cerrar">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
     </div>
-    <button class="fav-panel-close" onclick="closeFavPanel()" aria-label="Cerrar panel">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
-    </button>
+
+    <!-- Vista lista -->
+    <div id="fav-panel-body" class="fav-panel-body"></div>
+
+    <!-- Vista comparación -->
+    <div id="fav-compare-view" class="fav-compare-view" style="display:none">
+      <button class="fav-compare-back" onclick="hideCompareView()">
+        <svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Volver a favoritos
+      </button>
+      <div id="fav-compare-table" class="fav-compare-table"></div>
+    </div>
+
+    <!-- Footer -->
+    <div class="fav-panel-footer">
+      <button class="fav-share-list-btn" onclick="favShareList()" title="Copiar enlace de tu lista">
+        <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        <span id="favShareListTxt">Compartir lista</span>
+      </button>
+      <a href="#contacto" class="fav-panel-cta" onclick="closeFavPanel()">Contactar</a>
+    </div>
+
   </div>
-  <div id="fav-panel-body" class="fav-panel-body"></div>
-  <div class="fav-panel-footer">
-    <p class="fav-panel-footer-text">¿Te interesa alguna? Conversemos.</p>
-    <a href="#contacto" class="fav-panel-cta" onclick="closeFavPanel()">Contactar</a>
-  </div>
-</aside>
+</div>
 
 <style>
 /* ── Favoritos — corazón en cards ── */
@@ -6651,49 +6682,65 @@ window.addEventListener('popstate', () => {
   pointer-events: none;
 }
 
-/* ── Favoritos — overlay y panel ── */
+/* ── Favoritos — overlay ── */
 .fav-overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(26,24,21,.45);
+  background: rgba(26,24,21,.55);
   z-index: 900;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
 }
 .fav-overlay.open { display: block; }
-.fav-panel {
+
+/* ── Modal centrado ── */
+.fav-modal {
   position: fixed;
-  top: 0;
-  right: 0;
-  width: min(420px, 100vw);
-  height: 100dvh;
-  background: var(--cream);
+  inset: 0;
   z-index: 901;
   display: flex;
-  flex-direction: column;
-  box-shadow: -8px 0 40px rgba(26,24,21,.18);
-  transform: translateX(100%);
-  transition: transform .35s cubic-bezier(.4,0,.2,1);
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .22s ease;
 }
-.fav-panel.open { transform: translateX(0); }
-.fav-panel-header {
+.fav-modal.open { pointer-events: all; opacity: 1; }
+.fav-modal-inner {
+  width: min(700px, 94vw);
+  max-height: 88dvh;
+  background: var(--cream);
+  border-radius: 6px;
+  box-shadow: 0 32px 80px rgba(26,24,21,.28), 0 0 0 1px rgba(168,136,90,.12);
+  display: flex;
+  flex-direction: column;
+  transform: translateY(16px) scale(.98);
+  transition: transform .25s cubic-bezier(.34,1.3,.64,1);
+}
+.fav-modal.open .fav-modal-inner { transform: translateY(0) scale(1); }
+
+/* Header */
+.fav-modal-header {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: 2rem 1.5rem 1.2rem;
-  border-bottom: 1px solid rgba(168,136,90,.2);
+  padding: 1.6rem 1.8rem 1.2rem;
+  border-bottom: 1px solid rgba(168,136,90,.18);
+  gap: 1rem;
 }
+.fav-header-actions { display: flex; align-items: center; gap: .5rem; flex-shrink: 0; }
 .fav-panel-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--dark);
   font-weight: 500;
-  margin: 0 0 .2rem;
+  margin: 0 0 .15rem;
 }
 .fav-panel-count {
-  font-size: .72rem;
+  font-size: .68rem;
   color: var(--warm-mid);
-  letter-spacing: .08em;
+  letter-spacing: .1em;
   text-transform: uppercase;
   margin: 0;
 }
@@ -6701,166 +6748,228 @@ window.addEventListener('popstate', () => {
   background: none;
   border: 1px solid var(--sand);
   border-radius: 2px;
-  width: 34px;
-  height: 34px;
+  width: 32px; height: 32px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   color: var(--warm-mid);
-  transition: all .2s;
+  transition: all .18s;
   flex-shrink: 0;
 }
 .fav-panel-close:hover { background: var(--dark); color: var(--cream); border-color: var(--dark); }
+.fav-action-btn {
+  display: flex; align-items: center; gap: .4rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .7rem; letter-spacing: .08em; text-transform: uppercase;
+  background: none; border: 1px solid var(--sand);
+  border-radius: 2px; padding: .35rem .75rem;
+  cursor: pointer; color: var(--warm-mid);
+  transition: all .18s; white-space: nowrap;
+}
+.fav-action-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
+.fav-action-wsp { color: #25d366; border-color: rgba(37,211,102,.35); }
+.fav-action-wsp:hover { background: rgba(37,211,102,.08); border-color: #25d366; }
+
+/* Body */
 .fav-panel-body {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 1.8rem;
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: .8rem;
 }
+
+/* Empty state */
 .fav-panel-empty {
   text-align: center;
-  padding: 3rem 1rem;
+  padding: 3.5rem 1rem;
   color: var(--warm-mid);
 }
-.fav-panel-empty svg { margin: 0 auto 1rem; display: block; opacity: .3; }
-.fav-panel-empty p { font-size: .85rem; line-height: 1.6; }
+.fav-panel-empty svg { margin: 0 auto 1rem; display: block; opacity: .2; }
+.fav-panel-empty h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 400;
+  color: var(--charcoal); margin-bottom: .5rem;
+}
+.fav-panel-empty p { font-size: .82rem; line-height: 1.7; }
 
-/* Mini-card dentro del panel */
+/* Card rediseñada */
 .fav-mini-card {
   display: grid;
-  grid-template-columns: 80px 1fr auto;
-  gap: .75rem;
+  grid-template-columns: 120px 1fr auto;
+  gap: .9rem;
   align-items: start;
   background: #fff;
   border-radius: 4px;
-  padding: .75rem;
+  padding: .85rem;
   border: 1px solid rgba(168,136,90,.15);
+  transition: border-color .18s, box-shadow .18s;
 }
-.fav-mini-thumb {
-  width: 80px;
-  height: 60px;
+.fav-mini-card:hover { border-color: rgba(168,136,90,.4); box-shadow: 0 2px 12px rgba(26,24,21,.07); }
+.fav-mini-card.compare-selected { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(200,168,122,.25); }
+
+/* Thumb con hover antes/después */
+.fav-thumb-wrap {
+  position: relative;
+  width: 120px; height: 80px;
+  border-radius: 3px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.fav-thumb-wrap img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
   object-fit: cover;
-  border-radius: 2px;
-  background: var(--sand);
+  transition: opacity .35s ease;
 }
-.fav-mini-thumb-placeholder {
-  width: 80px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--sand) 0%, var(--gold-light, #d4c49a) 100%);
-  border-radius: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: .55rem;
-  color: var(--warm-mid);
-  text-align: center;
-  letter-spacing: .06em;
-  text-transform: uppercase;
+.fav-thumb-after { opacity: 0; }
+.fav-thumb-wrap:hover .fav-thumb-before { opacity: 0; }
+.fav-thumb-wrap:hover .fav-thumb-after { opacity: 1; }
+.fav-thumb-hint {
+  position: absolute; bottom: 4px; left: 4px;
+  font-size: .48rem; letter-spacing: .1em; text-transform: uppercase;
+  background: rgba(26,24,21,.62); color: rgba(255,255,255,.85);
+  padding: 2px 5px; border-radius: 1px;
+  pointer-events: none;
 }
+.fav-thumb-placeholder {
+  width: 120px; height: 80px;
+  background: linear-gradient(135deg, var(--sand) 0%, #d4c49a 100%);
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .55rem; color: var(--warm-mid);
+}
+
+/* Info */
 .fav-mini-info { min-width: 0; }
 .fav-mini-name {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1rem;
+  font-size: 1.05rem; font-weight: 600;
   color: var(--dark);
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   margin: 0 0 .15rem;
 }
-.fav-mini-loc {
-  font-size: .68rem;
-  color: var(--warm-mid);
-  margin: 0 0 .3rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.fav-mini-price {
-  font-size: .78rem;
-  font-weight: 600;
-  color: var(--accent-dark);
-  margin: 0 0 .4rem;
-}
-.fav-mini-specs {
-  font-size: .65rem;
-  color: var(--warm-mid);
-  margin: 0;
-}
+.fav-mini-loc { font-size: .68rem; color: var(--warm-mid); margin: 0 0 .3rem; }
+.fav-mini-price { font-size: .82rem; font-weight: 600; color: var(--accent-dark); margin: 0 0 .4rem; }
+.fav-mini-specs { font-size: .65rem; color: var(--warm-mid); line-height: 1.5; margin: 0; }
+
+/* Acciones card */
 .fav-mini-actions { display: flex; flex-direction: column; gap: .4rem; align-items: flex-end; }
+.fav-mini-check {
+  display: flex; align-items: center; gap: .3rem;
+  font-size: .6rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--warm-mid); cursor: pointer;
+  background: none; border: none; font-family: inherit;
+  transition: color .15s;
+}
+.fav-mini-check:hover { color: var(--accent-dark); }
+.fav-mini-check input[type=checkbox] { cursor: pointer; accent-color: var(--accent-dark); }
 .fav-mini-gal {
-  font-size: .62rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  background: none;
-  border: 1px solid var(--accent);
-  color: var(--accent-dark);
-  padding: .3rem .6rem;
-  border-radius: 2px;
-  cursor: pointer;
-  white-space: nowrap;
+  font-size: .6rem; letter-spacing: .1em; text-transform: uppercase;
+  background: none; border: 1px solid var(--accent);
+  color: var(--accent-dark); padding: .3rem .6rem;
+  border-radius: 2px; cursor: pointer; white-space: nowrap;
+  transition: all .15s;
 }
 .fav-mini-gal:hover { background: var(--accent); color: #fff; }
 .fav-mini-remove {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #bbb;
-  padding: .2rem;
-  transition: color .15s;
-  line-height: 1;
+  background: none; border: none; cursor: pointer;
+  color: #ccc; padding: .2rem; transition: color .15s; line-height: 1;
 }
 .fav-mini-remove:hover { color: #c0392b; }
 
+/* Vista comparación */
+.fav-compare-view { flex: 1; overflow-y: auto; padding: 1.2rem 1.8rem; }
+.fav-compare-back {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-size: .68rem; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--warm-mid); background: none; border: none;
+  cursor: pointer; margin-bottom: 1.2rem; transition: color .15s;
+  font-family: 'DM Sans', sans-serif;
+}
+.fav-compare-back:hover { color: var(--dark); }
+.fav-compare-table { width: 100%; border-collapse: collapse; }
+.fav-compare-table th {
+  font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: .7rem 1rem; text-align: left; font-weight: 500;
+  background: var(--sand); color: var(--charcoal);
+  border-bottom: 1px solid rgba(168,136,90,.2);
+}
+.fav-compare-table th:first-child { width: 160px; background: transparent; }
+.fav-compare-table th.col-prop {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: .95rem; font-weight: 500; letter-spacing: 0;
+  text-transform: none;
+}
+.fav-compare-table td {
+  padding: .65rem 1rem;
+  font-size: .8rem;
+  border-bottom: 1px solid rgba(168,136,90,.1);
+  color: var(--dark);
+  vertical-align: middle;
+}
+.fav-compare-table td:first-child {
+  font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--warm-mid); font-weight: 500;
+}
+.fav-compare-table tr:hover td { background: rgba(232,223,208,.3); }
+.fav-compare-img {
+  width: 100%; height: 60px; object-fit: cover;
+  border-radius: 2px; display: block; margin-bottom: .4rem;
+}
+.fav-compare-price { color: var(--accent-dark); font-weight: 700; font-size: .9rem; }
+
 /* Footer */
 .fav-panel-footer {
-  padding: 1.2rem 1.5rem;
-  border-top: 1px solid rgba(168,136,90,.2);
+  padding: 1rem 1.8rem;
+  border-top: 1px solid rgba(168,136,90,.18);
   background: var(--cream);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  border-radius: 0 0 6px 6px;
 }
-.fav-panel-footer-text {
-  font-size: .75rem;
-  color: var(--warm-mid);
-  margin: 0;
+.fav-share-list-btn {
+  display: flex; align-items: center; gap: .4rem;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+  background: none; border: none; cursor: pointer;
+  color: var(--warm-mid); transition: color .18s;
 }
+.fav-share-list-btn:hover { color: var(--dark); }
 .fav-panel-cta {
-  background: var(--dark);
-  color: var(--cream);
-  padding: .6rem 1.2rem;
-  font-size: .7rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: background .2s;
-  white-space: nowrap;
+  background: var(--dark); color: var(--cream);
+  padding: .55rem 1.2rem; font-size: .7rem;
+  letter-spacing: .1em; text-transform: uppercase;
+  text-decoration: none; border-radius: 2px;
+  transition: background .18s; white-space: nowrap;
 }
 .fav-panel-cta:hover { background: var(--charcoal, #3a3530); }
+
+@media (max-width: 600px) {
+  .fav-modal-inner { width: 100vw; max-height: 92dvh; border-radius: 12px 12px 0 0; align-self: flex-end; }
+  .fav-modal { align-items: flex-end; }
+  .fav-mini-card { grid-template-columns: 90px 1fr auto; }
+  .fav-thumb-wrap, .fav-thumb-placeholder { width: 90px; height: 65px; }
+  .fav-compare-table th:first-child { width: 100px; }
+}
 </style>
 
 <script>
 // ── Favoritos ─────────────────────────────────────────────
 const FAV_KEY = 'cpropiedades_favs';
+let _compareSelected = new Set();
 
-function getFavs() {
-  return JSON.parse(localStorage.getItem(FAV_KEY) || '[]');
-}
-function saveFavs(arr) {
-  localStorage.setItem(FAV_KEY, JSON.stringify(arr));
-}
+function getFavs() { return JSON.parse(localStorage.getItem(FAV_KEY) || '[]'); }
+function saveFavs(arr) { localStorage.setItem(FAV_KEY, JSON.stringify(arr)); }
 
 function toggleFav(prop) {
   const favs = getFavs();
   const idx = favs.indexOf(prop);
   if (idx === -1) favs.push(prop);
-  else favs.splice(idx, 1);
+  else { favs.splice(idx, 1); _compareSelected.delete(prop); }
   saveFavs(favs);
   updateFavUI();
   if (idx === -1) pulseNavHeart();
@@ -6869,26 +6978,24 @@ function toggleFav(prop) {
 function pulseNavHeart() {
   const btn = document.getElementById('navFavBtn');
   if (!btn) return;
-  btn.style.transform = 'scale(1.3)';
-  setTimeout(() => btn.style.transform = '', 250);
+  btn.style.transform = 'scale(1.35)';
+  btn.style.color = '#c0392b';
+  setTimeout(() => { btn.style.transform = ''; btn.style.color = ''; }, 320);
 }
 
 function updateFavUI() {
   const favs = getFavs();
-  // Corazones en todas las cards (originals + clones + filter-grid)
   document.querySelectorAll('.fav-btn').forEach(btn => {
     const active = favs.includes(btn.dataset.prop);
     btn.classList.toggle('fav-active', active);
     btn.setAttribute('aria-label', active ? 'Quitar de favoritos' : 'Guardar en favoritos');
   });
-  // Counter nav
   const counter = document.getElementById('fav-counter');
   if (counter) {
     counter.textContent = favs.length;
     counter.style.display = favs.length > 0 ? 'flex' : 'none';
   }
-  // Panel si está abierto
-  if (document.getElementById('fav-panel').classList.contains('open')) renderFavPanel();
+  if (document.getElementById('fav-modal')?.classList.contains('open')) renderFavPanel();
 }
 
 function renderFavPanel() {
@@ -6896,12 +7003,19 @@ function renderFavPanel() {
   const body = document.getElementById('fav-panel-body');
   const countEl = document.getElementById('fav-panel-count');
   if (countEl) countEl.textContent = favs.length === 1 ? '1 propiedad' : `${favs.length} propiedades`;
+
+  const compareBtn = document.getElementById('favCompareBtn');
+  const wspBtn = document.getElementById('favWspBtn');
+  if (compareBtn) compareBtn.style.display = favs.length >= 2 ? 'flex' : 'none';
+  if (wspBtn) wspBtn.style.display = favs.length > 0 ? 'flex' : 'none';
+
   if (!body) return;
 
   if (favs.length === 0) {
     body.innerHTML = `<div class="fav-panel-empty">
-      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-      <p>Aún no tienes favoritos.<br>Toca el corazón en cualquier propiedad.</p>
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <h3>Sin favoritos aún</h3>
+      <p>Toca el corazón en cualquier<br>propiedad para guardarla aquí.</p>
     </div>`;
     return;
   }
@@ -6910,14 +7024,20 @@ function renderFavPanel() {
   favs.forEach(prop => {
     const data = (window._cardData || {})[prop];
     if (!data) return;
-    const hasGal = data.hasgal;
-    const imgHtml = data.img
-      ? `<img class="fav-mini-thumb" src="${data.img}" alt="${data.name}" loading="lazy">`
-      : `<div class="fav-mini-thumb-placeholder">C|P</div>`;
+    const isSelected = _compareSelected.has(prop);
+    const thumbHtml = data.img
+      ? `<div class="fav-thumb-wrap" title="Hover para ver el potencial">
+           <img class="fav-thumb-before" src="${data.img}" alt="${data.name} — estado actual" loading="lazy">
+           ${data.imgAfter ? `<img class="fav-thumb-after" src="${data.imgAfter}" alt="${data.name} — potencial" loading="lazy">` : ''}
+           <span class="fav-thumb-hint">Hover</span>
+         </div>`
+      : `<div class="fav-thumb-placeholder">Sin foto</div>`;
+
     const card = document.createElement('div');
-    card.className = 'fav-mini-card';
+    card.className = 'fav-mini-card' + (isSelected ? ' compare-selected' : '');
+    card.dataset.prop = prop;
     card.innerHTML = `
-      ${imgHtml}
+      ${thumbHtml}
       <div class="fav-mini-info">
         <p class="fav-mini-name">${data.name}</p>
         <p class="fav-mini-loc">${data.address}</p>
@@ -6925,45 +7045,121 @@ function renderFavPanel() {
         <p class="fav-mini-specs">${data.specs}</p>
       </div>
       <div class="fav-mini-actions">
-        ${hasGal ? `<button class="fav-mini-gal" onclick="closeFavPanel();showGaleria('${prop}')">Ver</button>` : ''}
+        <label class="fav-mini-check">
+          <input type="checkbox" ${isSelected ? 'checked' : ''} onchange="toggleCompare('${prop}', this.checked)">
+          Comparar
+        </label>
+        ${data.hasgal ? `<button class="fav-mini-gal" onclick="closeFavPanel();showGaleria('${prop}')">Ver</button>` : ''}
         <button class="fav-mini-remove" aria-label="Quitar" onclick="toggleFav('${prop}')">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>`;
     body.appendChild(card);
   });
 }
 
+function toggleCompare(prop, checked) {
+  if (checked) _compareSelected.add(prop);
+  else _compareSelected.delete(prop);
+  document.querySelectorAll('.fav-mini-card').forEach(c => {
+    c.classList.toggle('compare-selected', _compareSelected.has(c.dataset.prop));
+  });
+  const btn = document.getElementById('favCompareBtn');
+  if (btn) {
+    const n = _compareSelected.size;
+    btn.innerHTML = `<svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg> ${n >= 2 ? 'Comparar (' + n + ')' : 'Comparar'}`;
+  }
+}
+
+function showCompareView() {
+  const selected = Array.from(_compareSelected);
+  if (selected.length < 2) { alert('Selecciona al menos 2 propiedades para comparar.'); return; }
+  const table = document.getElementById('fav-compare-table');
+  const cols = selected.map(p => (window._cardData||{})[p] || {});
+
+  const rowsData = [
+    { label: '', cells: cols.map(d => d.img ? `<img class="fav-compare-img" src="${d.img}" alt="${d.name||''}">` : '') },
+    { label: 'Propiedad', cells: cols.map(d => d.name || '—') },
+    { label: 'Precio', cells: cols.map(d => d.price ? `<span class="fav-compare-price">${d.price}</span>` : '—') },
+    { label: 'Ubicación', cells: cols.map(d => d.address || '—') },
+    { label: 'Dorm.', cells: cols.map(d => d.dorm || '—') },
+    { label: 'Comuna', cells: cols.map(d => d.commune || '—') },
+    { label: 'Specs', cells: cols.map(d => d.specs || '—') },
+  ];
+
+  const thead = `<thead><tr><th></th>${cols.map(d => `<th class="col-prop">${d.name||''}</th>`).join('')}</tr></thead>`;
+  const tbody = `<tbody>${rowsData.map(row =>
+    `<tr><th>${row.label}</th>${row.cells.map(c => `<td>${c}</td>`).join('')}</tr>`
+  ).join('')}</tbody>`;
+
+  table.innerHTML = `<table class="fav-compare-table">${thead}${tbody}</table>`;
+  document.getElementById('fav-panel-body').style.display = 'none';
+  document.getElementById('fav-compare-view').style.display = 'block';
+}
+
+function hideCompareView() {
+  document.getElementById('fav-compare-view').style.display = 'none';
+  document.getElementById('fav-panel-body').style.display = 'flex';
+}
+
+function favShareWsp() {
+  const favs = getFavs();
+  const lines = favs.map(p => {
+    const d = (window._cardData||{})[p] || {};
+    return `• ${d.name || p}${d.price ? ' — ' + d.price : ''}`;
+  }).join('\n');
+  const msg = encodeURIComponent(`Hola, guardé estas propiedades en Cúrcuma y me gustaría más información:\n\n${lines}`);
+  window.open(`https://wa.me/56998182936?text=${msg}`, '_blank');
+}
+
+function favShareList() {
+  const favs = getFavs();
+  const hash = btoa(JSON.stringify(favs)).replace(/=/g,'');
+  const url = `${location.origin}${location.pathname}?favs=${hash}`;
+  const btn = document.getElementById('favShareListTxt');
+  navigator.clipboard.writeText(url).then(() => {
+    if (btn) { btn.textContent = '¡Copiado!'; setTimeout(() => { btn.textContent = 'Compartir lista'; }, 2000); }
+  }).catch(() => {
+    if (btn) { btn.textContent = '¡Copiado!'; setTimeout(() => { btn.textContent = 'Compartir lista'; }, 2000); }
+  });
+}
+
 function openFavPanel() {
+  hideCompareView();
   renderFavPanel();
-  document.getElementById('fav-panel').classList.add('open');
+  document.getElementById('fav-modal').classList.add('open');
   document.getElementById('fav-overlay').classList.add('open');
   lockScroll(true);
 }
 function closeFavPanel() {
-  document.getElementById('fav-panel').classList.remove('open');
+  document.getElementById('fav-modal').classList.remove('open');
   document.getElementById('fav-overlay').classList.remove('open');
   lockScroll(false);
 }
 
-// Construir mapa de datos desde los originals
+// Construir mapa de datos desde los originals (incluye imagen after)
 window._cardData = {};
 (window._origCards || []).forEach(card => {
   const prop = card.dataset.prop;
   if (!prop) return;
-  const img = card.querySelector('.card-image-wrap img');
+  const imgBefore = card.querySelector('.card-ba-wrap img');
+  const imgAfter  = card.querySelector('.card-ba-after img');
+  const imgStatic = card.querySelector('.card-image-wrap img');
   window._cardData[prop] = {
-    name:    card.querySelector('.card-title')?.textContent?.trim() || '',
-    address: card.querySelector('.card-address')?.textContent?.trim() || '',
-    price:   card.querySelector('.price-actual')?.textContent?.trim() || '',
-    specs:   Array.from(card.querySelectorAll('.spec')).map(s => s.textContent.trim()).join(' · '),
-    img:     img ? img.src : '',
-    hasgal:  !!card.querySelector('[onclick*="showGaleria"]'),
+    name:     card.querySelector('.card-title')?.textContent?.trim() || '',
+    address:  card.querySelector('.card-address')?.textContent?.trim() || '',
+    price:    card.querySelector('.price-actual')?.textContent?.trim() || '',
+    specs:    Array.from(card.querySelectorAll('.spec')).map(s => s.textContent.trim()).join(' · '),
+    img:      imgBefore?.src || imgStatic?.src || '',
+    imgAfter: imgAfter?.src || '',
+    hasgal:   !!card.querySelector('[onclick*="showGaleria"]'),
+    dorm:     card.dataset.dorm || '—',
+    commune:  card.dataset.commune || '—',
     prop
   };
 });
 
-// Inyectar botones de corazón en todos los originals
+// Inyectar botones de corazón
 (window._origCards || []).forEach(card => {
   const prop = card.dataset.prop;
   if (!prop) return;
@@ -6977,6 +7173,14 @@ window._cardData = {};
   btn.addEventListener('click', e => { e.stopPropagation(); toggleFav(prop); });
   wrap.appendChild(btn);
 });
+
+// Restaurar lista compartida desde URL
+(function() {
+  try {
+    const hash = new URLSearchParams(location.search).get('favs');
+    if (hash) { const r = JSON.parse(atob(hash)); if (Array.isArray(r) && r.length) saveFavs(r); }
+  } catch(_) {}
+})();
 
 // Init UI con lo que hay en localStorage
 updateFavUI();
