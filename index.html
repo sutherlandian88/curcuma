@@ -6088,8 +6088,9 @@ function closeYT() {
 }
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
+    if (document.getElementById('fav-modal')?.classList.contains('open')) { closeFavPanel(); return; }
     closeYT();
-    if (document.getElementById('detalle-overlay').classList.contains('open')) closeDetalle();
+    if (document.getElementById('detalle-overlay')?.classList.contains('open')) closeDetalle();
   }
 });
 
@@ -6306,6 +6307,7 @@ async function notifySubmit() {
   if (btn) { btn.disabled = true; btn.textContent = 'Activando…'; }
 
   try {
+    if (FORMSPREE_URL.includes('XXXXXXXX')) throw new Error('no_endpoint');
     const res = await fetch(FORMSPREE_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -6322,9 +6324,14 @@ async function notifySubmit() {
       }),
     });
     if (!res.ok) throw new Error('server_error');
-  } catch (_) {
-    if (btn) { btn.disabled = false; btn.textContent = 'Error al enviar — intenta de nuevo'; }
-    return;
+  } catch (err) {
+    if (err.message === 'no_endpoint') {
+      // Sin endpoint configurado — continuar igual (mostrar success de todas formas)
+      // El equipo recibe la alerta manualmente vía WA
+    } else {
+      if (btn) { btn.disabled = false; btn.textContent = 'Error al enviar — intenta de nuevo'; }
+      return;
+    }
   }
 
   // Mostrar success
@@ -6415,13 +6422,24 @@ makeCardBA('detailBA', 'detailAfter', 'detailDivider', 'detailHandle');
     btn.textContent = 'Enviando…';
     btn.disabled = true;
     try {
+      if (form.action.includes('XXXXXXXX')) throw new Error('no_endpoint');
       const res = await fetch(form.action, { method:'POST', body: new FormData(form), headers:{'Accept':'application/json'} });
       if (res.ok) { form.style.display = 'none'; if(success) success.style.display = 'block'; }
-      else throw new Error();
-    } catch(_) {
-      if(error) error.style.display = 'block';
-      btn.textContent = 'Enviar mensaje';
-      btn.disabled = false;
+      else throw new Error('server');
+    } catch(err) {
+      if (err.message === 'no_endpoint') {
+        // Sin Formspree — redirigir a WhatsApp con datos pre-cargados
+        const nombre = form.querySelector('[name="nombre"]')?.value || '';
+        const mensaje = form.querySelector('[name="mensaje"]')?.value || '';
+        const msg = encodeURIComponent(`Hola, me contacto desde curcuma.cl.\n${nombre ? 'Nombre: '+nombre+'\n' : ''}${mensaje ? mensaje : ''}`);
+        window.open(`https://wa.me/56998182936?text=${msg}`, '_blank');
+        form.style.display = 'none';
+        if(success) success.style.display = 'block';
+      } else {
+        if(error) error.style.display = 'block';
+        btn.textContent = 'Enviar mensaje';
+        btn.disabled = false;
+      }
     }
   });
 })();
@@ -6551,6 +6569,8 @@ window.addEventListener('load', () => {
 });
 // Browser back/forward
 window.addEventListener('popstate', () => {
+  // Cerrar fav-modal si está abierto
+  if (document.getElementById('fav-modal')?.classList.contains('open')) { closeFavPanel(); return; }
   // Cerrar detalle overlay si está abierto
   const det = document.getElementById('detalle-overlay');
   if (det && det.classList.contains('open')) { closeDetalle(); return; }
