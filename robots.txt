@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://curcuma.cl/sitemap.xml
+Sitemap: https://www.bycurcuma.cl/sitemap.xml
