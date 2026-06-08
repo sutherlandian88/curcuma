@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sutherlandian88.github.io/curcuma/sitemap.xml
+Sitemap: https://curcuma.cl/sitemap.xml
