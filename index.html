@@ -186,7 +186,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.googletagmanager.com">
-<link rel="dns-prefetch" href="https://formspree.io">
+<link rel="dns-prefetch" href="https://kxtyoownxsvybhgvbpcu.supabase.co">
 
 <!-- Preload hero images (LCP) -->
 <link rel="preload" as="image" href="imgs/sz-01A-cocina-antes.jpg" fetchpriority="high">
@@ -2856,7 +2856,7 @@
       <p class="section-eyebrow" style="font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.4rem;">Propiedades en venta</p>
       <h2 class="section-title">Tu próximo hogar <span>está aquí</span></h2>
     </div>
-    <a href="#" class="see-all">Ver todas (24) <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    <a href="#" class="see-all">Ver todas (<span id="verTodasN">—</span>) <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
   </div>
 
   <style>
@@ -2879,490 +2879,35 @@
   <div class="listings-grid" id="listingsGrid">
 
     <!-- Card 0 - Los Sauzales (FEATURED) -->
-    <div class="listing-card featured" data-prop="sauzales" data-tipo="casa" data-dorm="2" data-uf="52000" data-commune="Lo Barnechea">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cba0">
-          <div class="card-ba-before">
-            <img src="imgs/sz-05A-living-antes.jpg" alt="Los Sauzales — Living antes de remodelar" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div class="card-ba-after" id="cba0-after">
-            <img src="imgs/sz-05B-living-despues.jpg" alt="Los Sauzales — Living después de remodelar" loading="eager" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div class="card-ba-divider" id="cba0-div"></div>
-          <div class="card-ba-handle" id="cba0-handle">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cba0-logo"><span>C | Estudio</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-exclusivo" style="z-index:8">Lo Barnechea</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Lo Barnechea</div>
-        <h3 class="card-title">Casa sector Los Trapenses</h3>
-        <p class="card-address">Los Alazanes, Los Trapenses · Lo Barnechea</p>
-        <div class="card-velocity vel-hot">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Alta demanda</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>2.207</strong> m² ter.</span>
-          <span class="spec"><strong>419</strong> m² cons.</span>
-          <span class="spec"><strong>2</strong> dorm.</span>
-          <span class="spec"><strong>3</strong> baños</span>
-          <span class="spec"><strong>—</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 52.000</div>
-          </div>
-          <div class="card-cta-stack">
-            <button class="card-cta" onclick="showDetalle('sauzales')">Ver más</button>
-            <button class="card-cta card-cta-secondary" onclick="openYT('1192098322')">Ver video</button>
-            <a class="card-cta-wsp" href="https://wa.me/56998182936?text=Hola%2C%20me%20interesa%20Los%20Sauzales%20en%20Lo%20Barnechea" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- Card 1 - El Queltehue -->
     <!-- Asturias — Arriendo Las Condes -->
     <!-- El Rebalse -->
-    <div class="listing-card featured" data-prop="rebalse" data-tipo="casa" data-dorm="5" data-uf="30000" data-commune="Lo Barnechea">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cbar">
-          <div class="card-ba-before">
-            <img src="imgs/rb-01A-hall-antes.jpg" alt="El Rebalse — Hall antes de remodelar, Lo Barnechea" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div class="card-ba-after" id="cbar-after">
-            <img src="imgs/rb-01B-hall-despues.jpg" alt="El Rebalse — Hall después de remodelar, Lo Barnechea" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div class="card-ba-divider" id="cbar-div"></div>
-          <div class="card-ba-handle" id="cbar-handle" aria-label="Deslizar para comparar">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cbar-logo"><span>C | Estudio</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-exclusivo" style="z-index:8">Lo Barnechea</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Lo Barnechea</div>
-        <h3 class="card-title">Casa sector El Tranque</h3>
-        <p class="card-address">El Rebalse / El Tranque, Lo Barnechea</p>
-        <div class="card-velocity vel-hot">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Alta demanda</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>961</strong> m² ter.</span>
-          <span class="spec"><strong>601</strong> m² cons.</span>
-          <span class="spec"><strong>5</strong> dorm.</span>
-          <span class="spec"><strong>6</strong> baños</span>
-          <span class="spec"><strong>4</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 30.000</div>
-          </div>
-          <div class="card-cta-stack">
-            <button class="card-cta" onclick="showDetalle('rebalse')">Ver más</button>
-            <button class="card-cta card-cta-secondary" onclick="openYT('1192844197')">Ver video</button>
-            <a class="card-cta-wsp" href="https://wa.me/56998182936?text=Hola%2C%20me%20interesa%20El%20Rebalse%20en%20Lo%20Barnechea" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
-    <div class="listing-card featured" data-prop="queltehue" data-tipo="casa" data-dorm="6" data-uf="31489" data-commune="Lo Barnechea">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cbaq">
-          <div class="card-ba-before">
-            <img src="imgs/qt-01A-fachada-antes.jpg" alt="Propiedad sector Santuario del Valle — Fachada antes de remodelar" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div class="card-ba-after" id="cbaq-after">
-            <img src="imgs/qt-01B-fachada-despues.jpg" alt="Propiedad sector Santuario del Valle — Fachada después de remodelar" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-          </div>
-          <div class="card-ba-divider" id="cbaq-div"></div>
-          <div class="card-ba-handle" id="cbaq-handle" aria-label="Deslizar para comparar">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cbaq-logo"><span>C | Estudio</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-exclusivo" style="z-index:8">Lo Barnechea</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Lo Barnechea</div>
-        <h3 class="card-title">Casa sector Santuario del Valle</h3>
-        <p class="card-address">Lo Barnechea, Santiago</p>
-        <div class="card-velocity vel-hot">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Alta demanda</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>932</strong> m² ter.</span>
-          <span class="spec"><strong>416</strong> m² cons.</span>
-          <span class="spec"><strong>6</strong> dorm.</span>
-          <span class="spec"><strong>6</strong> baños</span>
-          <span class="spec"><strong>4</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 31.489</div>
-          </div>
-          <div class="card-cta-stack">
-            <button class="card-cta" onclick="showDetalle('queltehue')">Ver más</button>
-            <button class="card-cta card-cta-secondary" onclick="openYT('1192836439')">Ver video</button>
-            <a class="card-cta-wsp" href="https://wa.me/56998182936?text=Hola%2C%20me%20interesa%20El%20Queltehue%20en%20Lo%20Barnechea" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- Card 2 - Featured (original Card 1) -->
-    <div class="listing-card featured" data-prop="camino-alba" data-tipo="casa" data-dorm="4" data-uf="18500" data-commune="Las Condes">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cba1">
-          <div class="card-ba-before">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#4a423a 0%,#3a3028 100%);"></div>
-          </div>
-          <div class="card-ba-after" id="cba1-after">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#f0ebe2 0%,#d4c8b0 100%);"></div>
-          </div>
-          <div class="card-ba-divider" id="cba1-div"></div>
-          <div class="card-ba-handle" id="cba1-handle">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cba1-logo"><span>Cúrcuma</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-exclusivo" style="z-index:8">Las Condes</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Las Condes</div>
-        <h3 class="card-title">Casa en Camino El Alba</h3>
-        <p class="card-address">Camino El Alba 3200, Las Condes</p>
-        <div class="card-velocity vel-hot">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Alta demanda</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>—</strong> m² ter.</span>
-          <span class="spec"><strong>180</strong> m² cons.</span>
-          <span class="spec"><strong>4</strong> dorm.</span>
-          <span class="spec"><strong>3</strong> baños</span>
-          <span class="spec"><strong>2</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 18.500</div>
-            <div class="price-projected">UF 26.000 remodelada</div>
-          </div>
-          <button class="card-cta">Ver detalle</button>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- Card 2 -->
-    <div class="listing-card" data-prop="el-golf" data-tipo="departamento" data-dorm="3" data-uf="9200" data-commune="Las Condes">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cba2">
-          <div class="card-ba-before">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#524840 0%,#3d3530 100%);"></div>
-          </div>
-          <div class="card-ba-after" id="cba2-after">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#eee8de 0%,#d0c4a8 100%);"></div>
-          </div>
-          <div class="card-ba-divider" id="cba2-div"></div>
-          <div class="card-ba-handle" id="cba2-handle">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cba2-logo"><span>Cúrcuma</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-oportunidad" style="z-index:8">Las Condes</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Las Condes</div>
-        <h3 class="card-title">Dpto. en El Golf</h3>
-        <p class="card-address">Av. El Golf 150, Las Condes</p>
-        <div class="card-velocity vel-warm">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Interés moderado</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>—</strong> m² ter.</span>
-          <span class="spec"><strong>95</strong> m² cons.</span>
-          <span class="spec"><strong>3</strong> dorm.</span>
-          <span class="spec"><strong>2</strong> baños</span>
-          <span class="spec"><strong>—</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 9.200</div>
-            <div class="price-projected">UF 13.500 remodelada</div>
-          </div>
-          <button class="card-cta">Ver detalle</button>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- Card 3 -->
-    <div class="listing-card" data-prop="pedro-valdivia" data-tipo="casa" data-dorm="4" data-uf="14800" data-commune="Providencia">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cba3">
-          <div class="card-ba-before">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#483e36 0%,#322c26 100%);"></div>
-          </div>
-          <div class="card-ba-after" id="cba3-after">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#f2ede4 0%,#d8ccb4 100%);"></div>
-          </div>
-          <div class="card-ba-divider" id="cba3-div"></div>
-          <div class="card-ba-handle" id="cba3-handle">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cba3-logo"><span>Cúrcuma</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-oportunidad" style="z-index:8">Providencia</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Providencia</div>
-        <h3 class="card-title">Casa Pedro de Valdivia</h3>
-        <p class="card-address">Pedro de Valdivia Norte 880</p>
-        <div class="card-velocity vel-new">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Recién publicada</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>—</strong> m² ter.</span>
-          <span class="spec"><strong>180</strong> m² cons.</span>
-          <span class="spec"><strong>4</strong> dorm.</span>
-          <span class="spec"><strong>3</strong> baños</span>
-          <span class="spec"><strong>—</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 14.800</div>
-            <div class="price-projected">UF 20.500 remodelada</div>
-          </div>
-          <button class="card-cta">Ver detalle</button>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- Card 4 -->
-    <div class="listing-card" data-prop="el-arrayan" data-tipo="casa" data-dorm="4" data-uf="12900" data-commune="Lo Barnechea">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cba4">
-          <div class="card-ba-before">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#504840 0%,#3c3630 100%);"></div>
-          </div>
-          <div class="card-ba-after" id="cba4-after">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#ece6dc 0%,#cec2a8 100%);"></div>
-          </div>
-          <div class="card-ba-divider" id="cba4-div"></div>
-          <div class="card-ba-handle" id="cba4-handle">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cba4-logo"><span>Cúrcuma</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-exclusivo" style="z-index:8">Lo Barnechea</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Lo Barnechea</div>
-        <h3 class="card-title">Casa en El Arrayán</h3>
-        <p class="card-address">Camino El Arrayán 4820, Lo Barnechea</p>
-        <div class="card-velocity vel-warm">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Interés moderado</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>—</strong> m² ter.</span>
-          <span class="spec"><strong>240</strong> m² cons.</span>
-          <span class="spec"><strong>4</strong> dorm.</span>
-          <span class="spec"><strong>3</strong> baños</span>
-          <span class="spec"><strong>2</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 12.900</div>
-            <div class="price-projected">UF 18.500 remodelada</div>
-          </div>
-          <button class="card-cta">Ver detalle</button>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- Card 5 -->
-    <div class="listing-card" data-prop="bicentenario" data-tipo="departamento" data-dorm="3" data-uf="11400" data-commune="Vitacura">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cba5">
-          <div class="card-ba-before">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#4e4640 0%,#38322c 100%);"></div>
-          </div>
-          <div class="card-ba-after" id="cba5-after">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#f0ebe0 0%,#d6caae 100%);"></div>
-          </div>
-          <div class="card-ba-divider" id="cba5-div"></div>
-          <div class="card-ba-handle" id="cba5-handle">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cba5-logo"><span>Cúrcuma</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-oportunidad" style="z-index:8">Vitacura</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Vitacura</div>
-        <h3 class="card-title">Dpto. en Av. Bicentenario</h3>
-        <p class="card-address">Av. Bicentenario 3650, Vitacura</p>
-        <div class="card-velocity vel-hot">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Alta demanda</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>—</strong> m² ter.</span>
-          <span class="spec"><strong>110</strong> m² cons.</span>
-          <span class="spec"><strong>3</strong> dorm.</span>
-          <span class="spec"><strong>2</strong> baños</span>
-          <span class="spec"><strong>1</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 11.400</div>
-            <div class="price-projected">UF 16.200 remodelada</div>
-          </div>
-          <button class="card-cta">Ver detalle</button>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- Card 6 -->
-    <div class="listing-card" data-prop="la-dehesa" data-tipo="casa" data-dorm="4" data-uf="16200" data-commune="Las Condes">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cba6">
-          <div class="card-ba-before">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#463e38 0%,#322e28 100%);"></div>
-          </div>
-          <div class="card-ba-after" id="cba6-after">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#eae4da 0%,#cec2a6 100%);"></div>
-          </div>
-          <div class="card-ba-divider" id="cba6-div"></div>
-          <div class="card-ba-handle" id="cba6-handle">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cba6-logo"><span>Cúrcuma</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-exclusivo" style="z-index:8">Las Condes</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Las Condes</div>
-        <h3 class="card-title">Casa en La Dehesa</h3>
-        <p class="card-address">Av. La Dehesa 1540, Las Condes</p>
-        <div class="card-velocity vel-new">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Recién publicada</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>—</strong> m² ter.</span>
-          <span class="spec"><strong>210</strong> m² cons.</span>
-          <span class="spec"><strong>4</strong> dorm.</span>
-          <span class="spec"><strong>3</strong> baños</span>
-          <span class="spec"><strong>2</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 16.200</div>
-            <div class="price-projected">UF 22.800 remodelada</div>
-          </div>
-          <button class="card-cta">Ver detalle</button>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- Card 7 -->
-    <div class="listing-card" data-prop="condell" data-tipo="departamento" data-dorm="2" data-uf="8600" data-commune="Providencia">
-      <div class="card-image-wrap">
-        <div class="card-ba-wrap" id="cba7">
-          <div class="card-ba-before">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#4c4438 0%,#342e28 100%);"></div>
-          </div>
-          <div class="card-ba-after" id="cba7-after">
-            <div style="width:100%;height:100%;background:linear-gradient(135deg,#ede7dc 0%,#d2c8ae 100%);"></div>
-          </div>
-          <div class="card-ba-divider" id="cba7-div"></div>
-          <div class="card-ba-handle" id="cba7-handle">
-            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
-          </div>
-          <div class="card-ce-logo" id="cba7-logo"><span>Cúrcuma</span></div>
-          <span class="card-ba-tag b">Antes</span>
-          <span class="card-ba-tag a">Con C | Estudio</span>
-        </div>
-        <span class="card-badge badge-oportunidad" style="z-index:8">Providencia</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Providencia</div>
-        <h3 class="card-title">Dpto. en Av. Condell</h3>
-        <p class="card-address">Av. Condell 1280, Providencia</p>
-        <div class="card-velocity vel-warm">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Interés moderado</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>—</strong> m² ter.</span>
-          <span class="spec"><strong>88</strong> m² cons.</span>
-          <span class="spec"><strong>2</strong> dorm.</span>
-          <span class="spec"><strong>2</strong> baños</span>
-          <span class="spec"><strong>—</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Precio</div>
-            <div class="price-actual">UF 8.600</div>
-            <div class="price-projected">UF 12.400 remodelada</div>
-          </div>
-          <button class="card-cta">Ver detalle</button>
-        </div>
-      </div>
-    </div>
+    
 
     <!-- Separador sección Arriendo -->
     <div class="section-divider-card">
@@ -3374,42 +2919,7 @@
     </div>
 
     <!-- Asturias — Arriendo -->
-    <div class="listing-card featured" data-prop="asturias" data-tipo="departamento" data-dorm="2" data-uf="0" data-commune="Las Condes">
-      <div class="card-image-wrap">
-        <img src="imgs/as-01-living-staged.jpg" alt="Departamento Asturias Renato Sánchez Las Condes — Living remodelado" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
-        <span class="card-badge badge-oportunidad" style="z-index:8">Arriendo</span>
-      </div>
-      <div class="card-body">
-        <div class="card-comuna">Las Condes</div>
-        <h3 class="card-title">Asturias / Renato Sánchez</h3>
-        <p class="card-address">Barrio El Golf · Metro Escuela Militar</p>
-        <div class="card-velocity vel-hot">
-          <span class="vel-dot"></span>
-          <span class="vel-label">Recién rebajado</span>
-          <div class="vel-bar"><div class="vel-fill"></div></div>
-        </div>
-        <div class="card-specs">
-          <span class="spec"><strong>—</strong> m² ter.</span>
-          <span class="spec"><strong>85</strong> m² cons.</span>
-          <span class="spec"><strong>2</strong> dorm.</span>
-          <span class="spec"><strong>3</strong> baños</span>
-          <span class="spec"><strong>1</strong> estac.</span>
-        </div>
-        <div class="card-pricing">
-          <div class="price-block">
-            <div class="price-label">Arriendo</div>
-            <div class="price-actual">$1.100.000/mes</div>
-            <div class="price-projected">GC desde $160.000</div>
-          </div>
-          <div class="card-cta-stack">
-            <button class="card-cta" onclick="showDetalle('asturias')">Ver más</button>
-            <a class="card-cta-wsp" href="https://wa.me/56998182936?text=Hola%2C%20me%20interesa%20el%20departamento%20Asturias%20en%20Barrio%20El%20Golf" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+    
 
   </div>
   </div>
@@ -4453,47 +3963,6 @@ const galData = {
       { src:'imgs/sz-10A-bano1-antes.jpg',      caption:'Baño 1' },
       { src:'imgs/sz-14-estacionamiento.jpg',   caption:'Estacionamiento' }
     ]
-  },
-  asturias: {
-    name: 'Asturias / Renato Sánchez',
-    location: 'Barrio El Golf · Las Condes',
-    type: 'arriendo',
-    wsp: 'Hola%2C%20me%20interesa%20el%20departamento%20Asturias%20en%20Barrio%20El%20Golf.%20%C2%BFPodemos%20coordinar%20una%20visita%3F',
-    specs: {
-      ubicacion: 'Renato Sánchez, Barrio El Golf · Las Condes',
-      mtsTerreno: null,
-      mtsConstruidos: 85,
-      dormitorios: 2,
-      banos: 3,
-      piezaServicio: false,
-      estacionamiento: 1,
-      piscina: false,
-      anioConstruccion: null,
-    },
-    sliders: [],
-    photoGroups: [
-      {
-        label: 'Sin amoblar',
-        photos: [
-          { src:'imgs/as-01-living.jpg',      caption:'Living · comedor' },
-          { src:'imgs/as-02-living2.jpg',     caption:'Living · ángulo 2' },
-          { src:'imgs/as-03-living3.jpg',     caption:'Living · ángulo 3' },
-          { src:'imgs/as-04-dormitorio.jpg',  caption:'Dormitorio' },
-          { src:'imgs/as-05-bano.jpg',        caption:'Baño' }
-        ]
-      },
-      {
-        label: 'Con amoblar — staging virtual',
-        photos: [
-          { src:'imgs/as-01-living-staged.jpg',     caption:'Living · comedor' },
-          { src:'imgs/as-02-living2-staged.jpg',    caption:'Living · ángulo 2' },
-          { src:'imgs/as-03-living3-staged.jpg',    caption:'Living · ángulo 3' },
-          { src:'imgs/as-04-dormitorio-staged.jpg', caption:'Dormitorio' },
-          { src:'imgs/as-05-balco-staged.jpg',      caption:'Balcón' }
-        ]
-      }
-    ],
-    photos: []
   },
   rebalse: {
     name: 'Casa sector El Tranque',
@@ -5730,10 +5199,37 @@ function obBack(step) {
   if (step > 1) document.getElementById('line' + (step-1)).classList.remove('done');
 }
 
-// ── Formspree endpoint ────────────────────────────────────
-// 1. Ve a formspree.io → New Form → copia el Form ID
-// 2. Reemplaza XXXXXXXX abajo (ej: 'https://formspree.io/f/abcd1234')
-const FORMSPREE_URL = 'https://formspree.io/f/XXXXXXXX';
+// ── Backend de Curcuma ────────────────────────────────────
+// Los formularios escriben directo en la base del CRM, no en un servicio de
+// correo: así el dueño que escribe entra a la cola de captación con su
+// seguimiento, en vez de quedarse en una bandeja de entrada.
+//
+// Esta llave es la pública (anon): está hecha para vivir en el navegador.
+// Lo que se puede hacer con ella lo limitan las políticas de la base.
+const CURCUMA_URL  = 'https://kxtyoownxsvybhgvbpcu.supabase.co';
+const CURCUMA_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imt4dHlvb3dueHN2eWJoZ3ZicGN1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY4MjAzNzcsImV4cCI6MjEwMjM5NjM3N30.vKGIxFGs4hdHnnL32Ce2M_cQfHGyMdSIk0afkpdRNzA';
+
+async function curcumaRpc(fn, args) {
+  const res = await fetch(CURCUMA_URL + '/rest/v1/rpc/' + fn, {
+    method: 'POST',
+    headers: { apikey: CURCUMA_ANON, 'Content-Type': 'application/json' },
+    body: JSON.stringify(args),
+  });
+  if (!res.ok) {
+    let msg = 'No pudimos enviar tu solicitud';
+    try { msg = (await res.json()).message || msg; } catch (e) {}
+    throw new Error(msg);
+  }
+}
+
+async function curcumaInsert(tabla, fila) {
+  const res = await fetch(CURCUMA_URL + '/rest/v1/' + tabla, {
+    method: 'POST',
+    headers: { apikey: CURCUMA_ANON, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+    body: JSON.stringify(fila),
+  });
+  if (!res.ok) throw new Error('No pudimos enviar tu mensaje');
+}
 
 async function obSubmit() {
   if (!obValidate(3)) return;
@@ -5757,23 +5253,29 @@ async function obSubmit() {
   };
 
   try {
-    const res = await fetch(FORMSPREE_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify(data),
+    await curcumaRpc('registrar_dueno_web', {
+      p_nombre:      data.nombre,
+      p_telefono:    data.telefono,
+      p_email:       data.email      || null,
+      p_direccion:   data.direccion  || null,
+      p_comuna:      data.comuna     || null,
+      p_tipo:        data.tipo       || null,
+      p_m2:          data.m2     ? Number(String(data.m2).replace(/\D/g, ''))     : null,
+      p_precio:      data.precio ? Number(String(data.precio).replace(/\D/g, '')) : null,
+      p_plazo:       data.plazo       || null,
+      p_comentarios: data.comentarios || null,
     });
 
-    if (res.ok) {
+    {
       document.getElementById('ob-panel3').classList.remove('active');
       document.getElementById('dot3').classList.remove('active');
       document.getElementById('dot3').classList.add('done');
       document.getElementById('line2').classList.add('done');
       document.getElementById('ob-success').classList.add('active');
-    } else {
-      throw new Error('Error en el servidor');
     }
   } catch (err) {
-    alert('Hubo un problema al enviar. Por favor escríbenos a hola@cestudio.cl');
+    alert((err && err.message ? err.message : 'Hubo un problema al enviar') +
+          '. Si el problema sigue, escríbenos por WhatsApp al +56 9 9818 2936.');
     if (btn) { btn.disabled = false; btn.textContent = 'Enviar solicitud →'; }
   }
 }
@@ -6017,7 +5519,7 @@ document.querySelectorAll('.ob-check').forEach(el => {
       </div>
     </div>
     <div>
-      <form id="contactForm" action="https://formspree.io/f/XXXXXXXX" method="POST" style="display:flex;flex-direction:column;gap:.9rem;">
+      <form id="contactForm" method="POST" style="display:flex;flex-direction:column;gap:.9rem;">
         <input type="text" name="nombre" placeholder="Tu nombre" required style="background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.15);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.9rem;padding:.9rem 1rem;outline:none;width:100%;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(255,255,255,.4)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'" />
         <input type="email" name="email" placeholder="Tu correo" required style="background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.15);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.9rem;padding:.9rem 1rem;outline:none;width:100%;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(255,255,255,.4)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'" />
         <input type="tel" name="whatsapp" placeholder="WhatsApp (opcional)" style="background:rgba(255,255,255,.06);border:0.5px solid rgba(255,255,255,.15);color:var(--cream);font-family:'DM Sans',sans-serif;font-size:.9rem;padding:.9rem 1rem;outline:none;width:100%;transition:border-color .2s;" onfocus="this.style.borderColor='rgba(255,255,255,.4)'" onblur="this.style.borderColor='rgba(255,255,255,.15)'" />
@@ -6306,32 +5808,28 @@ async function notifySubmit() {
   if (contactEl) contactEl.style.borderColor = '';
   if (btn) { btn.disabled = true; btn.textContent = 'Activando…'; }
 
+  // Una alerta es un comprador diciendo qué busca: entra al buzón con sus
+  // criterios, para poder avisarle cuando aparezca algo que calce.
+  const criterios = [
+    opEl?.value, tipoPill, comunaEl?.value,
+    dormEl?.value ? dormEl.value + ' dorm.' : null,
+    precioEl?.value ? 'hasta ' + precioEl.value : null,
+  ].filter(Boolean).join(' · ');
+
   try {
-    if (FORMSPREE_URL.includes('XXXXXXXX')) throw new Error('no_endpoint');
-    const res = await fetch(FORMSPREE_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: JSON.stringify({
-        canal:   channel,
-        email:   emailEl?.value || '',
-        whatsapp: waEl?.value || '',
-        tipo:    tipoPill,
-        comuna:  comunaEl?.value || '',
-        dormitorios: dormEl?.value || '',
-        precio:  precioEl?.value || '',
-        operacion: opEl?.value || '',
-        _subject: 'Nueva alerta de propiedad — Cúrcuma',
-      }),
+    await curcumaInsert('consultas', {
+      nombre:   null,
+      email:    emailEl?.value || null,
+      telefono: waEl?.value || null,
+      mensaje:  'Alerta de búsqueda: ' + (criterios || 'sin criterios'),
+      canal:    'formulario',
+      estado:   'nueva',
     });
-    if (!res.ok) throw new Error('server_error');
   } catch (err) {
-    if (err.message === 'no_endpoint') {
-      // Sin endpoint configurado — continuar igual (mostrar success de todas formas)
-      // El equipo recibe la alerta manualmente vía WA
-    } else {
-      if (btn) { btn.disabled = false; btn.textContent = 'Error al enviar — intenta de nuevo'; }
-      return;
-    }
+    // Antes esto mostraba "listo" aunque no se hubiera enviado nada, y la
+    // persona quedaba esperando un aviso que nunca iba a llegar.
+    if (btn) { btn.disabled = false; btn.textContent = 'Error al enviar — intenta de nuevo'; }
+    return;
   }
 
   // Mostrar success
@@ -6422,26 +5920,209 @@ makeCardBA('detailBA', 'detailAfter', 'detailDivider', 'detailHandle');
     btn.textContent = 'Enviando…';
     btn.disabled = true;
     try {
-      if (form.action.includes('XXXXXXXX')) throw new Error('no_endpoint');
-      const res = await fetch(form.action, { method:'POST', body: new FormData(form), headers:{'Accept':'application/json'} });
-      if (res.ok) { form.style.display = 'none'; if(success) success.style.display = 'block'; }
-      else throw new Error('server');
+      // Quien escribe acá es un interesado en comprar: entra al buzón de
+      // consultas del CRM, no a la cola de captación de dueños.
+      await curcumaInsert('consultas', {
+        nombre:   form.querySelector('[name="nombre"]')?.value || null,
+        email:    form.querySelector('[name="email"]')?.value || null,
+        telefono: form.querySelector('[name="whatsapp"]')?.value || null,
+        mensaje:  form.querySelector('[name="mensaje"]')?.value || null,
+        canal:    'formulario',
+        estado:   'nueva',
+      });
+      form.style.display = 'none';
+      if (success) success.style.display = 'block';
     } catch(err) {
-      if (err.message === 'no_endpoint') {
-        // Sin Formspree — redirigir a WhatsApp con datos pre-cargados
-        const nombre = form.querySelector('[name="nombre"]')?.value || '';
-        const mensaje = form.querySelector('[name="mensaje"]')?.value || '';
-        const msg = encodeURIComponent(`Hola, me contacto desde curcuma.cl.\n${nombre ? 'Nombre: '+nombre+'\n' : ''}${mensaje ? mensaje : ''}`);
-        window.open(`https://wa.me/56998182936?text=${msg}`, '_blank');
-        form.style.display = 'none';
-        if(success) success.style.display = 'block';
-      } else {
-        if(error) error.style.display = 'block';
-        btn.textContent = 'Enviar mensaje';
-        btn.disabled = false;
-      }
+      // Si la base no responde, no se pierde el interesado: se le ofrece
+      // WhatsApp con el mensaje ya escrito.
+      const nombre = form.querySelector('[name="nombre"]')?.value || '';
+      const mensaje = form.querySelector('[name="mensaje"]')?.value || '';
+      const msg = encodeURIComponent(`Hola, me contacto desde bycurcuma.cl.\n${nombre ? 'Nombre: '+nombre+'\n' : ''}${mensaje}`);
+      window.open(`https://wa.me/56998182936?text=${msg}`, '_blank');
+      form.style.display = 'none';
+      if (success) success.style.display = 'block';
     }
   });
+})();
+
+
+// ══════════════════════════════════════════════════════════════════════════
+//  VITRINA · las propiedades salen de la base, no del HTML
+//
+//  Antes cada propiedad estaba escrita a mano acá dentro: agregar una exigía
+//  programar y publicar el sitio. Ahora se cargan de v_vitrina, que expone
+//  solo lo público —sin agente, sin comisiones, sin estado del mandato— y
+//  solo lo que está publicado o reservado.
+//
+//  Si la base no responde, las tarjetas que ya están en el HTML se quedan
+//  donde están: el sitio nunca queda vacío por un problema de red.
+// ══════════════════════════════════════════════════════════════════════════
+(function () {
+  const GRID = document.querySelector('.listings-grid');
+  if (!GRID) return;
+
+  const WSP = '56998182936';
+  const esc = t => String(t == null ? '' : t)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+  const precio = p => p.moneda === 'UF'
+    ? 'UF ' + Number(p.precio).toLocaleString('es-CL')
+    : '$' + Number(p.precio).toLocaleString('es-CL');
+
+  const velClase = d => d === 'alta' ? 'vel-hot' : d === 'media' ? 'vel-warm' : 'vel-new';
+  const velTexto = d => d === 'alta' ? 'Alta demanda' : d === 'media' ? 'Buen interés' : 'Recién publicada';
+
+  function specs(p) {
+    const s = [];
+    if (p.m2_terreno) s.push(['m² ter.', Math.round(p.m2_terreno).toLocaleString('es-CL')]);
+    if (p.m2)         s.push(['m² cons.', Math.round(p.m2).toLocaleString('es-CL')]);
+    if (p.dormitorios)s.push(['dorm.', p.dormitorios]);
+    if (p.banos)      s.push(['baños', p.banos]);
+    s.push(['estac.', p.estacionamientos ?? '—']);
+    return s.map(([k, v]) => `<span class="spec"><strong>${esc(v)}</strong> ${esc(k)}</span>`).join('');
+  }
+
+  /* El antes/después usa el primer ambiente que tenga el par completo. Si no
+     hay ninguno, se muestra la portada sola: una tarjeta sin imagen se ve
+     rota, y media comparación no comunica nada. */
+  function imagen(p, i) {
+    const amb = (p.ambientes || [])[0];
+    const portada = (p.fotos || [])[0];
+
+    if (amb) return `
+        <div class="card-ba-wrap" id="cba${i}">
+          <div class="card-ba-before">
+            <img src="${esc(amb.antes)}" alt="${esc(p.direccion)} — ${esc(amb.nombre)} antes de remodelar" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="card-ba-after" id="cba${i}-after">
+            <img src="${esc(amb.despues)}" alt="${esc(p.direccion)} — ${esc(amb.nombre)} con C | Estudio" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+          </div>
+          <div class="card-ba-divider" id="cba${i}-div"></div>
+          <div class="card-ba-handle" id="cba${i}-handle">
+            <svg fill="none" stroke="#1A1815" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4l-4 8 4 8M16 4l4 8-4 8"/></svg>
+          </div>
+          <div class="card-ce-logo" id="cba${i}-logo"><span>C | Estudio</span></div>
+          <span class="card-ba-tag b">Antes</span>
+          <span class="card-ba-tag a">Con C | Estudio</span>
+        </div>`;
+
+    if (portada) return `
+        <div class="card-ba-wrap">
+          <img src="${esc(portada)}" alt="${esc(p.direccion)}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
+        </div>`;
+
+    return `<div class="card-ba-wrap" style="background:var(--sand)"></div>`;
+  }
+
+  function tarjeta(p, i) {
+    const titulo = p.direccion || p.codigo;
+    const wsp = `https://wa.me/${WSP}?text=` + encodeURIComponent(
+      `Hola, me interesa ${titulo} (${p.codigo}) en ${p.comuna}.`);
+    const reservada = p.estado === 'reservada';
+
+    return `
+    <div class="listing-card${i === 0 ? ' featured' : ''}" data-codigo="${esc(p.codigo)}">
+      <div class="card-image-wrap">
+        ${imagen(p, i)}
+        <span class="card-badge badge-exclusivo" style="z-index:8">${esc(reservada ? 'Reservada' : p.comuna)}</span>
+      </div>
+      <div class="card-body">
+        <div class="card-comuna">${esc(p.comuna)}</div>
+        <h3 class="card-title">${esc(titulo)}</h3>
+        <p class="card-address">${esc([p.barrio, p.comuna].filter(Boolean).join(' · '))}</p>
+        <div class="card-velocity ${velClase(p.demanda)}">
+          <span class="vel-dot"></span>
+          <span class="vel-label">${esc(velTexto(p.demanda))}</span>
+          <div class="vel-bar"><div class="vel-fill"></div></div>
+        </div>
+        <div class="card-specs">${specs(p)}</div>
+        <div class="card-pricing">
+          <div class="price-block">
+            <div class="price-label">Precio</div>
+            <div class="price-actual">${esc(precio(p))}</div>
+          </div>
+          <div class="card-cta-stack">
+            ${p.video_id ? `<button class="card-cta card-cta-secondary" onclick="openYT('${esc(p.video_id)}')">Ver video</button>` : ''}
+            <a class="card-cta-wsp" href="${wsp}" target="_blank" rel="noopener" aria-label="Consultar por WhatsApp">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  /* El tirador del antes/después: el mismo comportamiento que las tarjetas
+     escritas a mano, pero enganchado a las que se crearon recién. */
+  function activarComparadores() {
+    GRID.querySelectorAll('.card-ba-wrap[id^="cba"]').forEach(wrap => {
+      const id = wrap.id;
+      const after = document.getElementById(id + '-after');
+      const div = document.getElementById(id + '-div');
+      const handle = document.getElementById(id + '-handle');
+      if (!after || !div || !handle) return;
+
+      let activo = false;
+      const poner = e => {
+        const r = wrap.getBoundingClientRect();
+        const px = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
+        const pct = Math.max(0, Math.min(100, (px / r.width) * 100));
+        after.style.clipPath = `inset(0 0 0 ${pct}%)`;
+        div.style.left = pct + '%';
+        handle.style.left = pct + '%';
+      };
+      const fin = () => { activo = false; };
+      wrap.addEventListener('mousedown', e => { activo = true; poner(e); });
+      wrap.addEventListener('touchstart', e => { activo = true; poner(e); }, { passive: true });
+      wrap.addEventListener('mousemove', e => activo && poner(e));
+      wrap.addEventListener('touchmove', e => activo && poner(e), { passive: true });
+      window.addEventListener('mouseup', fin);
+      window.addEventListener('touchend', fin);
+    });
+  }
+
+  function avisoVitrina(titulo, texto) {
+    return `<div style="padding:3rem 1.5rem;text-align:center;width:100%">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:.5rem">${titulo}</p>
+      <p style="font-size:.9rem;opacity:.7;margin-bottom:1.5rem">${texto}</p>
+      <a class="card-cta" href="https://wa.me/${WSP}?text=${encodeURIComponent('Hola, quiero ver las propiedades de Cúrcuma.')}" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+    </div>`;
+  }
+
+  async function cargar() {
+    let props;
+    try {
+      const res = await fetch(CURCUMA_URL + '/rest/v1/v_vitrina?select=*&order=publicada_el.desc', {
+        headers: { apikey: CURCUMA_ANON },
+      });
+      if (!res.ok) throw new Error('http ' + res.status);
+      props = await res.json();
+    } catch (e) {
+      // Ya no hay tarjetas escritas a mano que dejar en pie, así que se dice
+      // qué pasa y se ofrece WhatsApp. Una grilla vacía sin explicación se
+      // lee como "no tienen propiedades".
+      console.warn('Vitrina: no se pudo cargar desde la base.', e);
+      GRID.innerHTML = avisoVitrina('No pudimos cargar las propiedades',
+        'Es un problema nuestro, no tuyo. Escríbenos y te las mostramos.');
+      return;
+    }
+
+    if (!Array.isArray(props) || props.length === 0) {
+      GRID.innerHTML = avisoVitrina('Estamos preparando las próximas propiedades',
+        'Escríbenos y te avisamos apenas publiquemos.');
+      return;
+    }
+
+    GRID.innerHTML = props.map(tarjeta).join('');
+    // el contador decía 24 fijo, sin relación con lo publicado
+    const cont = document.getElementById('verTodasN');
+    if (cont) cont.textContent = props.length;
+    activarComparadores();
+    document.dispatchEvent(new CustomEvent('vitrina:lista', { detail: { n: props.length } }));
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', cargar);
+  else cargar();
 })();
 
 // ── Cookie banner ──
